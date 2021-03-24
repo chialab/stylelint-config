@@ -6,6 +6,7 @@ module.exports = {
     ],
     plugins: [
         'stylelint-order',
+        'stylelint-value-no-unknown-custom-properties',
     ],
     rules: {
         /**
@@ -237,13 +238,14 @@ module.exports = {
             {
                 ignoreProperties: [
                     'appearance',
+                    'box-orient',
+                    'composes',
+                    'compose-with',
                     'voice-family',
                     '-webkit-appearance',
                     '-webkit-overflow-scrolling',
                     '-webkit-tap-highlight-color',
                     '-webkit-line-clamp',
-                    'composes',
-                    'compose-with',
                 ],
                 ignoreSelectors: [
                     ':export',
@@ -1389,6 +1391,16 @@ module.exports = {
                 'clip-rule',
                 'stroke',
             ],
+            {
+                severity: 'warning',
+            },
+        ],
+        /**
+         * https://github.com/csstools/stylelint-value-no-unknown-custom-properties
+         * Check custom properties values.
+         */
+        'csstools/value-no-unknown-custom-properties': [
+            true,
             {
                 severity: 'warning',
             },
