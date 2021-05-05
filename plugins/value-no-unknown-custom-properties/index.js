@@ -37,11 +37,19 @@ async function getCustomPropertiesFromRoot(root) {
         const fileName = atRule.params
             .replace(/url\(/, '')
             .replace(/\)$/, '')
-            .replace(/['|"]/g, '');
-        const resolvedFileName = path.resolve(sourceDir, fileName);
+            .replace(/['|"]/g, '')
+            .replace(/^~/, '');
         importPromises.push(resolve(fileName, {
             basedir: sourceDir,
-        }).then(() => getCustomPropertiesFromCSSFile(resolvedFileName)));
+            extensions: ['.css'],
+            preserveSymlinks: true,
+            packageFilter(pkg) {
+                if (pkg.style) {
+                    pkg.main = pkg.style;
+                }
+                return pkg;
+            },
+        }).then((resolvedFileName) => getCustomPropertiesFromCSSFile(resolvedFileName)));
     });
 
     const properties = await Promise.all(importPromises);
