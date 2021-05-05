@@ -6,7 +6,7 @@ module.exports = {
     ],
     plugins: [
         'stylelint-order',
-        'stylelint-value-no-unknown-custom-properties',
+        './plugins/value-no-unknown-custom-properties',
     ],
     rules: {
         /**
