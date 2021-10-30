@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.4](https://github.com/chialab/stylelint-config/compare/v1.1.3...v1.1.4) (2021-10-30)
+
+
+### Bug Fixes
+
+* disable javascript files ([f91721a](https://github.com/chialab/stylelint-config/commit/f91721abc2f16db0ad8a25bb3224dc1d39c3ae41))
+* remove rule for empty lines before comments ([78bee65](https://github.com/chialab/stylelint-config/commit/78bee65744661adc942d59b456ba4f062035851c))
+
 ### [1.1.3](https://github.com/chialab/stylelint-config/compare/v1.1.2...v1.1.3) (2021-05-15)
 
 
