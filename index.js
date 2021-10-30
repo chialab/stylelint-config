@@ -1054,7 +1054,7 @@ module.exports = {
         ],
         /**
          * https://stylelint.io/user-guide/rules/comment-no-empty
-         *  Disallow empty comments.
+         * Disallow empty comments.
          */
         'comment-no-empty': [
             true,
@@ -1066,12 +1066,7 @@ module.exports = {
          * https://stylelint.io/user-guide/rules/comment-empty-line-before
          * Require or disallow an empty line before comments (Autofixable).
          */
-        'comment-empty-line-before': [
-            'always',
-            {
-                severity: 'warning',
-            },
-        ],
+        'comment-empty-line-before': null,
         /**
          * https://stylelint.io/user-guide/rules/comment-whitespace-inside
          * Require or disallow whitespace on the inside of comment markers.
