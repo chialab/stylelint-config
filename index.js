@@ -3,6 +3,10 @@ module.exports = {
         'node_modules/**/*',
         'dist/**/*',
         'public/**/*',
+        '**/*.js',
+        '**/*.jsx',
+        '**/*.ts',
+        '**/*.tsx',
     ],
     plugins: [
         'stylelint-order',
