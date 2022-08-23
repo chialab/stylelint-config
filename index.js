@@ -643,7 +643,7 @@ module.exports = {
          * Disallow qualifying a selector by type.
          */
         'selector-no-qualifying-type': [
-            false,
+            null,
             {
                 ignore: [
                     'attribute',
