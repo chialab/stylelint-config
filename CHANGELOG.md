@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.0.2
+
+### Patch Changes
+
+- ee6db79: Handle package exports.
+
 ## 2.0.1
 
 ### Patch Changes
