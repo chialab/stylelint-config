@@ -5,18 +5,39 @@
 
 const fs = require('fs');
 const path = require('path');
-const nodeResolve = require('resolve');
+const nodeResolve = require('enhanced-resolve');
 const postcss = require('postcss');
 const stylelint = require('stylelint');
 const postcssValuesParser = require('postcss-values-parser');
 
-async function resolve(source, options) {
-    return new Promise((ok, ko) => {
-        nodeResolve(source, options, (err, res) => {
+const styleResolve = nodeResolve.create({
+    extensions: ['.css'],
+    mainFields: ['style'],
+    preferRelative: true,
+    symlinks: false,
+});
+
+/**
+ * Check if the given path is a valid url.
+ * @param {string} url
+ * @returns True if the given string is a valid url.
+ */
+function isUrl(url) {
+    try {
+        return !!(new URL(url));
+    } catch (err) {
+        //
+    }
+    return false;
+}
+
+async function resolve(source, importer) {
+    return new Promise((resolve, reject) => {
+        styleResolve({}, importer, source, {}, (err, res) => {
             if (err) {
-                ko(err);
+                reject(err);
             } else {
-                ok(res);
+                resolve(res);
             }
         });
     });
@@ -31,7 +52,6 @@ async function getCustomPropertiesFromRoot(root) {
         sourceDir = path.dirname(root.source.input.file);
     }
 
-
     const importPromises = [];
     root.walkAtRules('import', (atRule) => {
         const fileName = atRule.params
@@ -39,20 +59,16 @@ async function getCustomPropertiesFromRoot(root) {
             .replace(/\)$/, '')
             .replace(/['|"]/g, '')
             .replace(/^~/, '');
-        if (fileName.match(/^https?:\/\//)) {
+
+        if (isUrl(fileName)) {
             return;
         }
-        importPromises.push(resolve(fileName, {
-            basedir: sourceDir,
-            extensions: ['.css'],
-            preserveSymlinks: true,
-            packageFilter(pkg) {
-                if (pkg.style) {
-                    pkg.main = pkg.style;
-                }
-                return pkg;
-            },
-        }).then((resolvedFileName) => getCustomPropertiesFromCSSFile(resolvedFileName)).catch(() => ({})));
+
+        importPromises.push(
+            resolve(fileName, sourceDir)
+                .then((resolvedFileName) => getCustomPropertiesFromCSSFile(resolvedFileName))
+                .catch(() => ({}))
+        );
     });
 
     const properties = await Promise.all(importPromises);
