@@ -5,6 +5,9 @@
   "license": "MIT",
   "author": "Chialab <dev@chialab.io> (https://www.chialab.it)",
   "main": "index.js",
+  "scripts": {
+    "lint": "eslint index.js 'plugins/**/*.js'"
+  },
   "files": [
     "plugins",
     "LICENSE",
