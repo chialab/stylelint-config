@@ -423,16 +423,6 @@ module.exports = {
             },
         ],
         /**
-         * https://stylelint.io/user-guide/rules/at-rule-name-newline-after
-         * Require a newline after at-rule names.
-         */
-        'at-rule-name-newline-after': [
-            'always-multi-line',
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
          * https://stylelint.io/user-guide/rules/comment-no-empty
          * Disallow empty comments.
          */
