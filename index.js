@@ -10,7 +10,7 @@ module.exports = {
     ],
     plugins: [
         'stylelint-order',
-        './plugins/value-no-unknown-custom-properties',
+        'stylelint-value-no-unknown-custom-properties',
     ],
     rules: {
         /**
@@ -21,16 +21,6 @@ module.exports = {
             true,
             {
                 severity: 'error',
-            },
-        ],
-        /**
-         * https://stylelint.io/user-guide/rules/color-hex-case
-         * Specify lowercase or uppercase for hex colors (Autofixable).
-         */
-        'color-hex-case': [
-            'lower',
-            {
-                severity: 'warning',
             },
         ],
         /**
@@ -84,71 +74,11 @@ module.exports = {
             },
         ],
         /**
-         * https://stylelint.io/user-guide/rules/function-comma-newline-before
-         * Require a newline or disallow whitespace before the commas of functions.
-         */
-        'function-comma-newline-before': [
-            'never-multi-line',
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
-         * https://stylelint.io/user-guide/rules/function-comma-space-after
-         * Require a single space or disallow whitespace after the commas of functions.
-         */
-        'function-comma-space-after': [
-            'always-single-line',
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
-         * https://stylelint.io/user-guide/rules/function-comma-space-before
-         * Require a single space or disallow whitespace before the commas of functions.
-         */
-        'function-comma-space-before': [
-            'never',
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
-         * https://stylelint.io/user-guide/rules/function-max-empty-lines
-         * Limit the number of adjacent empty lines within functions.
-         */
-        'function-max-empty-lines': [
-            0,
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
          * https://stylelint.io/user-guide/rules/function-name-case
          * Specify lowercase or uppercase for function names.
          */
         'function-name-case': [
             'lower',
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
-         * https://stylelint.io/user-guide/rules/function-parentheses-newline-inside
-         * Require a newline or disallow whitespace on the inside of the parentheses of functions.
-         */
-        'function-parentheses-newline-inside': [
-            'always-multi-line',
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
-         * https://stylelint.io/user-guide/rules/function-parentheses-space-inside
-         * Require a single space or disallow whitespace on the inside of the parentheses of functions.
-         */
-        'function-parentheses-space-inside': [
-            'never-single-line',
             {
                 severity: 'warning',
             },
@@ -164,16 +94,6 @@ module.exports = {
             },
         ],
         /**
-         * https://stylelint.io/user-guide/rules/function-whitespace-after
-         * Require or disallow whitespace after functions.
-         */
-        'function-whitespace-after': [
-            'always',
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
          * https://stylelint.io/user-guide/rules/string-no-newline
          * Disallow (unescaped) newlines in strings.
          */
@@ -181,26 +101,6 @@ module.exports = {
             true,
             {
                 severity: 'error',
-            },
-        ],
-        /**
-         * https://stylelint.io/user-guide/rules/string-quotes
-         * Specify single or double quotes around strings (Autofixable).
-         */
-        'string-quotes': [
-            'single',
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
-         * https://stylelint.io/user-guide/rules/number-no-trailing-zeros
-         * Disallow trailing zeros in numbers (Autofixable).
-         */
-        'number-no-trailing-zeros': [
-            true,
-            {
-                severity: 'warning',
             },
         ],
         /**
@@ -219,16 +119,6 @@ module.exports = {
          */
         'length-zero-no-unit': [
             true,
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
-         * https://stylelint.io/user-guide/rules/unit-case
-         * Specify lowercase or uppercase for units.
-         */
-        'unit-case': [
-            'lower',
             {
                 severity: 'warning',
             },
@@ -275,16 +165,6 @@ module.exports = {
             },
         ],
         /**
-         * https://stylelint.io/user-guide/rules/property-case
-         * Specify lowercase or uppercase for properties.
-         */
-        'property-case': [
-            'lower',
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
          * https://stylelint.io/user-guide/rules/value-no-vendor-prefix
          * Disallow vendor prefixes for values.
          */
@@ -307,56 +187,6 @@ module.exports = {
                 ignoreKeywords: [
                     '/^U+/',
                 ],
-                severity: 'warning',
-            },
-        ],
-        /**
-         * https://stylelint.io/user-guide/rules/value-list-comma-newline-after
-         * Require a newline or disallow whitespace after the commas of value lists.
-         */
-        'value-list-comma-newline-after': [
-            'never-multi-line',
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
-         * https://stylelint.io/user-guide/rules/value-list-comma-newline-before
-         * Require a newline or disallow whitespace before the commas of value lists.
-         */
-        'value-list-comma-newline-before': [
-            'never-multi-line',
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
-         * https://stylelint.io/user-guide/rules/value-list-comma-space-after
-         * Require a single space or disallow whitespace after the commas of value lists.
-         */
-        'value-list-comma-space-after': [
-            'always',
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
-         * https://stylelint.io/user-guide/rules/value-list-comma-space-before
-         * Require a single space or disallow whitespace before the commas of value lists.
-         */
-        'value-list-comma-space-before': [
-            'never',
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
-         * https://stylelint.io/user-guide/rules/value-list-max-empty-lines
-         * Limit the number of adjacent empty lines within value lists.
-         */
-        'value-list-max-empty-lines': [
-            0,
-            {
                 severity: 'warning',
             },
         ],
@@ -431,176 +261,6 @@ module.exports = {
             },
         ],
         /**
-         * https://stylelint.io/user-guide/rules/declaration-bang-space-after
-         * Require a single space or disallow whitespace after the bang of declarations.
-         */
-        'declaration-bang-space-after': [
-            'never',
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
-         * https://stylelint.io/user-guide/rules/declaration-bang-space-before
-         * Require a single space or disallow whitespace before the bang of declarations.
-         */
-        'declaration-bang-space-before': [
-            'always',
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
-         * https://stylelint.io/user-guide/rules/declaration-colon-space-after
-         * Require a single space or disallow whitespace after the colon of declarations.
-         */
-        'declaration-colon-space-after': [
-            'always',
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
-         * https://stylelint.io/user-guide/rules/declaration-colon-space-before
-         * Require a single space or disallow whitespace before the colon of declarations.
-         */
-        'declaration-colon-space-before': [
-            'never',
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
-         * https://stylelint.io/user-guide/rules/declaration-block-semicolon-newline-before
-         * Require a newline or disallow whitespace before the semicolons of declaration blocks.
-         */
-        'declaration-block-semicolon-newline-before': [
-            'never-multi-line',
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
-         * https://stylelint.io/user-guide/rules/declaration-block-semicolon-space-after
-         * Require a single space or disallow whitespace after the semicolons of declaration blocks.
-         */
-        'declaration-block-semicolon-space-after': [
-            'always-single-line',
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
-         * https://stylelint.io/user-guide/rules/declaration-block-semicolon-space-before
-         * Require a single space or disallow whitespace before the semicolons of declaration blocks.
-         */
-        'declaration-block-semicolon-space-before': [
-            'never',
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
-         * https://stylelint.io/user-guide/rules/declaration-block-trailing-semicolon
-         * Require or disallow a trailing semicolon within declaration blocks.
-         */
-        'declaration-block-trailing-semicolon': [
-            'always',
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
-         * https://stylelint.io/user-guide/rules/block-closing-brace-empty-line-before
-         * Require or disallow an empty line before the closing brace of blocks.
-         */
-        'block-closing-brace-empty-line-before': [
-            'never',
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
-         * https://stylelint.io/user-guide/rules/block-closing-brace-newline-after
-         * Require a newline or disallow whitespace after the closing brace of blocks.
-         */
-        'block-closing-brace-newline-after': [
-            'always',
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
-         * https://stylelint.io/user-guide/rules/block-closing-brace-newline-before
-         * Require a newline or disallow whitespace before the closing brace of blocks.
-         */
-        'block-closing-brace-newline-before': [
-            'always-multi-line',
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
-         * https://stylelint.io/user-guide/rules/block-closing-brace-space-after
-         * Require a single space or disallow whitespace after the closing brace of blocks.
-         */
-        'block-closing-brace-space-after': [
-            'always-single-line',
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
-         * https://stylelint.io/user-guide/rules/block-closing-brace-space-before
-         * Require a single space or disallow whitespace before the closing brace of blocks.
-         */
-        'block-closing-brace-space-before': [
-            'always-single-line',
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
-         * https://stylelint.io/user-guide/rules/block-opening-brace-newline-after
-         * Require a newline after the opening brace of blocks.
-         */
-        'block-opening-brace-newline-after': [
-            'always-multi-line',
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
-         * https://stylelint.io/user-guide/rules/block-opening-brace-newline-before
-         * Require a newline or disallow whitespace before the opening brace of blocks.
-         */
-        'block-opening-brace-newline-before': [
-            'never-single-line',
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
-         * https://stylelint.io/user-guide/rules/block-opening-brace-space-after
-         * Require a single space or disallow whitespace after the opening brace of blocks.
-         */
-        'block-opening-brace-space-after': [
-            'always-single-line',
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
-         * https://stylelint.io/user-guide/rules/block-opening-brace-space-before
-         * Require a single space or disallow whitespace before the opening brace of blocks.
-         */
-        'block-opening-brace-space-before': [
-            'always',
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
          * https://stylelint.io/user-guide/rules/selector-pseudo-class-no-unknown
          * Disallow unknown pseudo-class selectors.
          */
@@ -629,16 +289,6 @@ module.exports = {
             },
         ],
         /**
-         * https://stylelint.io/user-guide/rules/selector-max-empty-lines
-         * Limit the number of adjacent empty lines within selectors.
-         */
-        'selector-max-empty-lines': [
-            0,
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
          * https://stylelint.io/user-guide/rules/selector-no-qualifying-type
          * Disallow qualifying a selector by type.
          */
@@ -663,101 +313,11 @@ module.exports = {
             },
         ],
         /**
-         * https://stylelint.io/user-guide/rules/selector-attribute-brackets-space-inside
-         * Require a single space or disallow whitespace on the inside of the brackets within attribute selectors.
-         */
-        'selector-attribute-brackets-space-inside': [
-            'never',
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
-         * https://stylelint.io/user-guide/rules/selector-attribute-operator-space-after
-         * Require a single space or disallow whitespace after operators within attribute selectors.
-         */
-        'selector-attribute-operator-space-after': [
-            'never',
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
-         * https://stylelint.io/user-guide/rules/selector-attribute-operator-space-before
-         * Require a single space or disallow whitespace before operators within attribute selectors.
-         */
-        'selector-attribute-operator-space-before': [
-            'never',
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
          * https://stylelint.io/user-guide/rules/selector-attribute-quotesquotes
          * Require or disallow quotes for attribute values.
          */
         'selector-attribute-quotes': [
             'always',
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
-         * https://stylelint.io/user-guide/rules/selector-combinator-space-after
-         * Require a single space or disallow whitespace after the combinators of selectors.
-         */
-        'selector-combinator-space-after': [
-            'always',
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
-         * https://stylelint.io/user-guide/rules/selector-combinator-space-before
-         * Require a single space or disallow whitespace before the combinators of selectors.
-         */
-        'selector-combinator-space-before': [
-            'always',
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
-         * https://stylelint.io/user-guide/rules/selector-descendant-combinator-no-non-space
-         * Disallow non-space characters for descendant combinators of selectors.
-         */
-        'selector-descendant-combinator-no-non-space': [
-            true,
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
-         * https://stylelint.io/user-guide/rules/selector-pseudo-class-case
-         * Specify lowercase or uppercase for pseudo-class selectors.
-         */
-        'selector-pseudo-class-case': [
-            'lower',
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
-         * https://stylelint.io/user-guide/rules/selector-pseudo-class-parentheses-space-inside
-         * Require a single space or disallow whitespace on the inside of the parentheses within pseudo-class selectors.
-         */
-        'selector-pseudo-class-parentheses-space-inside': [
-            'never',
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
-         * https://stylelint.io/user-guide/rules/selector-pseudo-element-case
-         * Specify lowercase or uppercase for pseudo-element selectors.
-         */
-        'selector-pseudo-element-case': [
-            'lower',
             {
                 severity: 'warning',
             },
@@ -778,46 +338,6 @@ module.exports = {
          */
         'selector-type-case': [
             'lower',
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
-         * https://stylelint.io/user-guide/rules/selector-list-comma-newline-after
-         * Require a newline or disallow whitespace after the commas of selector lists.
-         */
-        'selector-list-comma-newline-after': [
-            'always-multi-line',
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
-         * https://stylelint.io/user-guide/rules/selector-list-comma-newline-before
-         * Require a newline or disallow whitespace before the commas of selector lists.
-         */
-        'selector-list-comma-newline-before': [
-            'never-multi-line',
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
-         * https://stylelint.io/user-guide/rules/selector-list-comma-space-after
-         * Require a single space or disallow whitespace after the commas of selector lists.
-         */
-        'selector-list-comma-space-after': [
-            'always-single-line',
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
-         * https://stylelint.io/user-guide/rules/selector-list-comma-space-before
-         * Require a single space or disallow whitespace before the commas of selector lists.
-         */
-        'selector-list-comma-space-before': [
-            'never',
             {
                 severity: 'warning',
             },
@@ -854,106 +374,6 @@ module.exports = {
          */
         'media-feature-name-no-vendor-prefix': [
             true,
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
-         * https://stylelint.io/user-guide/rules/media-feature-colon-space-after
-         * Require a single space or disallow whitespace after the colon in media features.
-         */
-        'media-feature-colon-space-after': [
-            'always',
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
-         * https://stylelint.io/user-guide/rules/media-feature-colon-space-before
-         * Require a single space or disallow whitespace before the colon in media features.
-         */
-        'media-feature-colon-space-before': [
-            'never',
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
-         * https://stylelint.io/user-guide/rules/media-feature-name-case
-         * Specify lowercase or uppercase for media feature names.
-         */
-        'media-feature-name-case': [
-            'lower',
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
-         * https://stylelint.io/user-guide/rules/media-feature-parentheses-space-inside
-         * Require a single space or disallow whitespace on the inside of the parentheses within media features.
-         */
-        'media-feature-parentheses-space-inside': [
-            'never',
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
-         * https://stylelint.io/user-guide/rules/media-feature-range-operator-space-after
-         * Require a single space or disallow whitespace after the range operator in media features.
-         */
-        'media-feature-range-operator-space-after': [
-            'always',
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
-         * https://stylelint.io/user-guide/rules/media-feature-range-operator-space-before
-         * Require a single space or disallow whitespace before the range operator in media features.
-         */
-        'media-feature-range-operator-space-before': [
-            'always',
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
-         * https://stylelint.io/user-guide/rules/media-query-list-comma-newline-after
-         * Require a newline or disallow whitespace after the commas of media query lists.
-         */
-        'media-query-list-comma-newline-after': [
-            'always-multi-line',
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
-         * https://stylelint.io/user-guide/rules/media-query-list-comma-newline-before
-         * Require a newline or disallow whitespace before the commas of media query lists.
-         */
-        'media-query-list-comma-newline-before': [
-            'never-multi-line',
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
-         * https://stylelint.io/user-guide/rules/media-query-list-comma-space-after
-         * Require a single space or disallow whitespace after the commas of media query lists.
-         */
-        'media-query-list-comma-space-after': [
-            'always-single-line',
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
-         * https://stylelint.io/user-guide/rules/media-query-list-comma-space-before
-         * Require a single space or disallow whitespace before the commas of media query lists.
-         */
-        'media-query-list-comma-space-before': [
-            'never',
             {
                 severity: 'warning',
             },
@@ -999,56 +419,6 @@ module.exports = {
                 ignore: [
                     'after-comment',
                 ],
-                severity: 'warning',
-            },
-        ],
-        /**
-         * https://stylelint.io/user-guide/rules/at-rule-name-case
-         * Specify lowercase or uppercase for at-rules names (Autofixable).
-         */
-        'at-rule-name-case': [
-            'lower',
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
-         * https://stylelint.io/user-guide/rules/at-rule-name-newline-after
-         * Require a newline after at-rule names.
-         */
-        'at-rule-name-newline-after': [
-            'always-multi-line',
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
-         * https://stylelint.io/user-guide/rules/at-rule-name-space-after
-         * Require a single space after at-rule names.
-         */
-        'at-rule-name-space-after': [
-            'always-single-line',
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
-         * https://stylelint.io/user-guide/rules/at-rule-semicolon-newline-after
-         * Require a newline after the semicolon of at-rules.
-         */
-        'at-rule-semicolon-newline-after': [
-            'always',
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
-         * https://stylelint.io/user-guide/rules/at-rule-semicolon-space-before
-         * Require a single space or disallow whitespace before the semicolons of at rules.
-         */
-        'at-rule-semicolon-space-before': [
-            'never',
-            {
                 severity: 'warning',
             },
         ],
@@ -1108,16 +478,6 @@ module.exports = {
             },
         ],
         /**
-         * https://stylelint.io/user-guide/rules/no-extra-semicolons
-         * Disallow extra semicolons.
-         */
-        'no-extra-semicolons': [
-            true,
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
          * https://stylelint.io/user-guide/rules/no-invalid-double-slash-comments
          * Disallow double-slash comments (//...) which are not supported by CSS.
          */
@@ -1132,49 +492,6 @@ module.exports = {
          * Limit the depth of nesting.
          */
         'max-nesting-depth': 10,
-        /**
-         * https://stylelint.io/user-guide/rules/indentation
-         * Specify indentation (Autofixable).
-         */
-        'indentation': [
-            4,
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
-         * https://stylelint.io/user-guide/rules/max-empty-lines
-         * Limit the number of adjacent empty lines.
-         */
-        'max-empty-lines': [
-            1,
-            {
-                ignore: [
-                    'comments',
-                ],
-                severity: 'warning',
-            },
-        ],
-        /**
-         * https://stylelint.io/user-guide/rules/no-eol-whitespace
-         * Disallow end-of-line whitespace.
-         */
-        'no-eol-whitespace': [
-            true,
-            {
-                severity: 'warning',
-            },
-        ],
-        /**
-         * https://stylelint.io/user-guide/rules/no-missing-end-of-source-newline
-         * Disallow missing end-of-source newlines (Autofixable).
-         */
-        'no-missing-end-of-source-newline': [
-            true,
-            {
-                severity: 'warning',
-            },
-        ],
         'order/order': [
             [
                 'custom-properties',
