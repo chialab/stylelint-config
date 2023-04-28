@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.0.3
+
+### Patch Changes
+
+- 4add00e: Correctly parse layered imports.
+
 ## 2.0.2
 
 ### Patch Changes
