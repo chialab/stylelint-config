@@ -9,6 +9,7 @@ const nodeResolve = require('enhanced-resolve');
 const postcss = require('postcss');
 const stylelint = require('stylelint');
 const postcssValuesParser = require('postcss-values-parser');
+const postcssValueParser = require('postcss-value-parser');
 
 const styleResolve = nodeResolve.create({
     extensions: ['.css'],
@@ -54,7 +55,8 @@ async function getCustomPropertiesFromRoot(root) {
 
     const importPromises = [];
     root.walkAtRules('import', (atRule) => {
-        const fileName = atRule.params
+        const fileName = postcssValueParser(atRule.params)
+            .nodes[0].value
             .replace(/url\(/, '')
             .replace(/\)$/, '')
             .replace(/['|"]/g, '')
