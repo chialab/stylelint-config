@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.0.1
+
+### Patch Changes
+
+- b3c5435: Update `stylelint-value-no-unknown-custom-properties` dependency.
+
 ## 3.0.0
 
 ### Major Changes
