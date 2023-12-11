@@ -4,8 +4,12 @@ module.exports = {
         'dist/**/*',
         'public/**/*',
         '**/*.js',
+        '**/*.mjs',
+        '**/*.cjs',
         '**/*.jsx',
         '**/*.ts',
+        '**/*.mts',
+        '**/*.cts',
         '**/*.tsx',
     ],
     plugins: [
