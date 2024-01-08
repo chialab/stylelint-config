@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.0.0
+
+### Major Changes
+
+- 27a9d55: Support stylelint 16.
+
 ## 3.0.1
 
 ### Patch Changes
