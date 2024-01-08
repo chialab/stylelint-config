@@ -6,19 +6,28 @@ Chialab's linting rules for [Stylelint](https://stylelint.io/).
 
 Install Stylelint:
 
-```sh
-$ npm i -D stylelint
+```
+npm i -D stylelint
+```
+
+```
+yarn add -D stylelint
 ```
 
 Install `@chialab/stylelint-config`:
 
-```sh
-$ npm i -D @chialab/stylelint-config
+```
+npm i -D @chialab/stylelint-config
+```
+
+```
+yarn add -D @chialab/stylelint-config
 ```
 
 Create a `.stylelintrc.json` file and add the configuration:
 
 **.stylelintrc.json**
+
 ```json
 {
     "extends": "@chialab/stylelint-config"
